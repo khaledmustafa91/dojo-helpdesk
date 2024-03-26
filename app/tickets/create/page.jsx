@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { API_BASE_URL } from '@/app/utils/constants';
 
 export default function CreateTickets() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function CreateTickets() {
       user_email: userEmail,
     };
 
-    const res = await fetch('http://localhost:4000/tickets', {
+    const res = await fetch(`${API_BASE_URL}/tickets`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(ticket),

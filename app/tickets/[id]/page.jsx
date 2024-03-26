@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
+import { API_BASE_URL } from '@/app/utils/constants';
 
 async function getTicket(id) {
-  const res = await fetch(`http://localhost:4000/tickets/${id}`, {
+  const res = await fetch(`${API_BASE_URL}/tickets/${id}`, {
     next: {
       revalidate: 60,
     },

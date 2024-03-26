@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import { API_BASE_URL } from '../utils/constants';
 
 async function getTickets() {
-  const res = await fetch('http://localhost:4000/tickets', {
+  const res = await fetch(`${API_BASE_URL}/tickets`, {
     next: {
       revalidate: 0,
     },
